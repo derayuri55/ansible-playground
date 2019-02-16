@@ -8,3 +8,5 @@
     - geerlingguy.repo-epel
     - geerlingguy.apache
     - geerlingguy.php
+    - name: common/users
+      tags: users

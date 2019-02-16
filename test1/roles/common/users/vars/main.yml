@@ -1,0 +1,8 @@
+---
+user_newusers:
+  user01:
+    detail: "user01"
+    pass: "{{ 'ansible' | password_hash('sha256') }}"
+    groups: sys
+    priv: admin
+

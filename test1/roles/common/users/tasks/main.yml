@@ -1,0 +1,17 @@
+---
+## create group
+- name: main / Create new groups
+  group:
+    name: "{{ item.value.groups }}"
+  with_dict: "{{ user_newusers }}"
+
+## create user
+- name: main / Create new users
+  user:
+    name: "{{ item.key }}"
+    password: "{{ item.value.pass }}"
+    shell: /bin/bash
+    home: "/home/{{ item.value.groups }}/{{ item.key }}"
+    state: present
+    groups: "{{ item.value.groups }}"
+  with_dict: "{{ user_newusers }}"
