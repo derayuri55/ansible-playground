@@ -1,0 +1,8 @@
+---
+- hosts: host
+  gather_facts: yes
+  become: yes
+  roles:
+    - geerlingguy.repo-epel
+    - geerlingguy.apache
+    - geerlingguy.php
