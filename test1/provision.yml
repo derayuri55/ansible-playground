@@ -3,6 +3,8 @@
   gather_facts: yes
   become: yes
   roles:
+    - geerlingguy.firewall
+    - geerlingguy.security
     - geerlingguy.repo-epel
     - geerlingguy.apache
     - geerlingguy.php
