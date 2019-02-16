@@ -6,3 +6,8 @@ user_newusers:
     groups: sys
     priv: admin
 
+  wwwtest:
+    detail: "wwwtest"
+    pass: "{{ 'wwwtest' | password_hash('sha256') }}"
+    groups: test
+    priv: admin

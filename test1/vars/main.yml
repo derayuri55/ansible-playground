@@ -1,0 +1,9 @@
+apache_vhosts:
+  # Additional properties:
+  # 'serveradmin, serveralias, allow_override, options, extra_parameters'.
+  - servername: "vagrant.test"
+    documentroot: "/home/"
+
+apache_allow_override: "All"
+apache_options: "-Indexes +FollowSymLinks"
+

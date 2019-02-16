@@ -1,6 +1,9 @@
 ---
+
 - hosts: host
   gather_facts: yes
+  vars_files:
+  - vars/main.yml
   become: yes
   roles:
     - name: common/users
