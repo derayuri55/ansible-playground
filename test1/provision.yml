@@ -3,10 +3,10 @@
   gather_facts: yes
   become: yes
   roles:
+    - name: common/users
+      tags: users
     - geerlingguy.firewall
     - geerlingguy.security
     - geerlingguy.repo-epel
     - geerlingguy.apache
     - geerlingguy.php
-    - name: common/users
-      tags: users
