@@ -6,4 +6,3 @@ apache_vhosts:
 
 apache_allow_override: "All"
 apache_options: "-Indexes +FollowSymLinks"
-
