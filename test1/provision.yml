@@ -8,8 +8,8 @@
   roles:
     - name: common/users
       tags: users
+    - geerlingguy.repo-epel
     - geerlingguy.firewall
     - geerlingguy.security
-    - geerlingguy.repo-epel
     - geerlingguy.apache
     - geerlingguy.php
