@@ -1,0 +1,6 @@
+---
+- src: geerlingguy.firewall
+- src: geerlingguy.security
+- src: geerlingguy.repo-epel
+- src: geerlingguy.apache
+- src: geerlingguy.php
