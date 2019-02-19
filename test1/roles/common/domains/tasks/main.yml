@@ -1,0 +1,6 @@
+---
+## create domain directory
+- name: main / Create domain directories
+  file: path="/home/{{ item.value.group }}/{{ item.value.name }}"
+        state=directory
+  with_dict: "{{ domain_newdomains }}"

@@ -1,0 +1,11 @@
+---
+domain_newdomains:
+  vagrant.test:
+    name: "vagrant.test"
+    group: "group1"
+    cert_file: ""
+
+  vagrant2.test:
+    name: "vagrant2.test"
+    group: "group2"
+    cert_file: ""
