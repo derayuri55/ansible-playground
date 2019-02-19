@@ -13,5 +13,5 @@
     shell: /bin/bash
     home: "/home/{{ item.value.groups }}/{{ item.key }}"
     state: present
-    groups: "{{ item.value.groups }}"
+    group: "{{ item.value.groups }}"
   with_dict: "{{ user_newusers }}"

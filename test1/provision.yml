@@ -1,12 +1,11 @@
 ---
-- hosts: host
+- hosts: all
   gather_facts: yes
   vars_files:
   - vars/main.yml
   become: yes
   roles:
     - name: common/users
-      tags: users
     - name: common/domains
     - geerlingguy.repo-epel
     - geerlingguy.firewall
