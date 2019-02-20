@@ -11,7 +11,7 @@
     name: "{{ item.key }}"
     password: "{{ item.value.pass }}"
     shell: /bin/bash
-    home: "/home/{{ item.value.groups }}/{{ item.key }}"
-    state: present
-    group: "{{ item.value.groups }}"
+    home: "/home/{{ item.value.groups }}/{{ item.value.domain }}/{{ item.key }}"
+    move_home: "yes"
+    groups: "{{ item.value.groups }}"
   with_dict: "{{ user_newusers }}"

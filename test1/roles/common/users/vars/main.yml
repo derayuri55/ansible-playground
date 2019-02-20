@@ -4,10 +4,12 @@ user_newusers:
     detail: "user01"
     pass: "{{ 'ansible' | password_hash('sha256') }}"
     groups: group1
+    domain: vagrant.test
     priv: admin
 
   wwwtest:
     detail: "wwwtest"
     pass: "{{ 'wwwtest' | password_hash('sha256') }}"
     groups: group2
+    domain: vagrant2.test
     priv: admin
