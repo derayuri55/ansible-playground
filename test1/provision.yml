@@ -5,8 +5,8 @@
   - vars/main.yml
   become: yes
   roles:
-    - name: common/users
     - name: common/domains
+    - name: common/users
     - geerlingguy.repo-epel
     - geerlingguy.firewall
     - geerlingguy.security
