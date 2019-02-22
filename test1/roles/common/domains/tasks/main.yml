@@ -4,3 +4,17 @@
   file: path="/home/{{ item.value.group }}/{{ item.value.name }}"
         state=directory
   with_dict: "{{ domain_newdomains }}"
+
+## create domain htdocs directory
+- name: main / Create domain htdocs directories
+  file: path="/home/{{ item.value.group }}/{{ item.value.name }}/htdocs"
+        state=directory
+  with_dict: "{{ domain_newdomains }}"
+
+## set_fact apache_vhosts
+- name: main / set_facts apache_vhosts
+  set_fact:
+    apache_vhosts: "{{ apache_vhosts + [{ 'servername': item.value.name, 'documentroot': '/home/' + item.value.group + '/' + item.value.name + '/htdocs' }]}}"
+  with_dict: "{{ domain_newdomains }}"
+
+- debug: msg="{{ apache_vhosts }}"
