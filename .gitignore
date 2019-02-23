@@ -1,2 +1,5 @@
 .vagrant
 provision.retry
+
+*/roles/*
+!*/roles/common
