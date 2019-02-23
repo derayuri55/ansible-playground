@@ -14,7 +14,12 @@
 ## set_fact apache_vhosts
 - name: main / set_facts apache_vhosts
   set_fact:
-    apache_vhosts: "{{ apache_vhosts + [{ 'servername': item.value.name, 'documentroot': '/home/' + item.value.group + '/' + item.value.name + '/htdocs' }]}}"
+    apache_vhosts: "{{ apache_vhosts + 
+    [{ 
+     'servername': item.value.name,
+     'documentroot': '/home/' + item.value.group + '/' + item.value.name + '/htdocs' 
+     }]
+    }}"
   with_dict: "{{ domain_newdomains }}"
 
-- debug: msg="{{ apache_vhosts }}"
+# - debug: msg="{{ apache_vhosts }}"
