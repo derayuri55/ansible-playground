@@ -1,3 +1,6 @@
+apache_global_vhost_settings: |
+  DirectoryIndex index.php index.html
+  # Add other global settings on subsequent lines.
 apache_vhosts: []
   # Additional properties:
   # 'serveradmin, serveralias, allow_override, options, extra_parameters'.

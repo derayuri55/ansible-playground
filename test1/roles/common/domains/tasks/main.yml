@@ -3,12 +3,23 @@
 - name: main / Create domain directories
   file: path="/home/{{ item.value.group }}/{{ item.value.name }}"
         state=directory
+        mode=0755
   with_dict: "{{ domain_newdomains }}"
 
 ## create domain htdocs directory
 - name: main / Create domain htdocs directories
   file: path="/home/{{ item.value.group }}/{{ item.value.name }}/htdocs"
         state=directory
+        mode=0755
+        group=apache
+        owner=apache
+  with_dict: "{{ domain_newdomains }}"
+
+- name: main / Create domain htdocs sample index.php
+  template:
+    dest: "/home/{{ item.value.group }}/{{ item.value.name }}/htdocs/index.php"
+    src: index.php.j2
+    mode: 0777
   with_dict: "{{ domain_newdomains }}"
 
 ## set_fact apache_vhosts
@@ -17,6 +28,7 @@
     apache_vhosts: "{{ apache_vhosts + 
     [{ 
      'servername': item.value.name,
+     'serveralias': 'www.' + item.value.name,
      'documentroot': '/home/' + item.value.group + '/' + item.value.name + '/htdocs' 
      }]
     }}"
