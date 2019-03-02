@@ -12,5 +12,6 @@
     - geerlingguy.security
     - geerlingguy.apache
     - geerlingguy.php
+    - geerlingguy.php-pgsql
     - name: common/selinux
     - name: common/reboot

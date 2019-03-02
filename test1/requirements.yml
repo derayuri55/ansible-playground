@@ -4,3 +4,4 @@
 - src: geerlingguy.repo-epel
 - src: geerlingguy.apache
 - src: geerlingguy.php
+- src: geerlingguy.php-pgsql
