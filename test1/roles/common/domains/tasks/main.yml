@@ -11,8 +11,6 @@
   file: path="/home/{{ item.value.group }}/{{ item.value.name }}/htdocs"
         state=directory
         mode=0755
-        group=apache
-        owner=apache
   with_dict: "{{ domain_newdomains }}"
 
 - name: main / Create domain htdocs sample index.php
