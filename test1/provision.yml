@@ -13,3 +13,4 @@
     - geerlingguy.apache
     - geerlingguy.php
     - name: common/selinux
+    - name: common/reboot
